@@ -83,7 +83,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
     </div>
     <div class="servicePrice">
       <div class="store"><img src="../assets/img/store.png" alt=""></div>
-      <div class="service"><img src="../assets/img/service.jpeg" alt=""></div>
+      <div class="service"><img src="../assets/img/service.png" alt=""></div>
     </div>
     <div class="menu"><img src="../assets/img/menu.png" alt=""></div>
     <!-- Nails Transformed, Beauty Defined. -->
