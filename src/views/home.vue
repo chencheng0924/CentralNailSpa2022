@@ -243,6 +243,9 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
 }
 .menu{
   width: 100%;
+  img{
+    width: 100%;
+  }
 }
 .footer{
   display: flex;
