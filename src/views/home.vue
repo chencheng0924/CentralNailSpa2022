@@ -85,9 +85,9 @@ const menuShow = ref(false)
     </div>
     <div class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center pic z-10" v-if="showBigPhoto">
       <div class="absolute right-10 top-5 text-xl font-semibold z-20 text-white cursor-pointer" @click="showBigPhoto = false">CLOSE</div>
-       <img src="@/assets/img/ca.png" class="rotate-180 w-[50px] absolute top-[50%] left-[10%] translate-y-[-50%] cursor-pointer" v-if="nowIndex > 1" @click="changePicIndex('back')">
+       <img src="@/assets/img/ca.png" class="rotate-180 w-[50px] absolute top-[50%] left-[10%] translate-y-[-50%] cursor-pointer mobile:left-[2%]" v-if="nowIndex > 1" @click="changePicIndex('back')">
       <img :src="nowPic" class="w-[70vw] h-[80vh] object-contain">
-      <img src="@/assets/img/ca.png" class="w-[50px] absolute top-[50%] right-[10%] translate-y-[-50%] cursor-pointer" v-if="nowIndex < pLimit" @click="changePicIndex('go')">
+      <img src="@/assets/img/ca.png" class="w-[50px] absolute top-[50%] right-[10%] translate-y-[-50%] cursor-pointer mobile:right-[2%]" v-if="nowIndex < pLimit" @click="changePicIndex('go')">
     </div>
     <div class="servicePrice">
       <div class="store"><img src="../assets/img/store.png" alt=""></div>
