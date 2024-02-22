@@ -27,11 +27,11 @@ const show = (type, idx, limit) => {
 const breakpoints = {
   // 700px and up
   700: {
-    itemsToShow: 3.5,
+    itemsToShow: 3,
     snapAlign: 'center',
   },
   // 1024 and up
-  1024: {
+  1290: {
     itemsToShow: 5,
     snapAlign: 'start',
   },
@@ -61,17 +61,17 @@ const menuShow = ref(false)
         </el-drawer>
       </div> 
       <div class="section2">Polish your life <hr>with perfect nails!</div>
-      <div class="section3"><img src="../assets/img/1.jpg" alt=""></div>
+      <div class="section3"><img src="../assets/img/1.jpg" alt="" class="object-cover"></div>
       <div class="paintWall" />
     </div>
     <!-- 輪播 -->
-    <div class="w-screen py-10 flex flex-col items-center">
+    <div class="w-screen py-10 flex flex-col items-center tablet:hidden">
       <div class="max-w-[1200px]">
         <Carousel :snapAlign="'center'" :breakpoints="breakpoints">
           <Slide v-for="slide in 10" :key="slide" @click="show('m', slide, 10)">
             <div class="carousel__item">
               <!-- <img :src="getAssetsFile(`m${slide}.png`)" class="w-[200px]"> -->
-              <img :src="getAssetsFile(`m${slide}.png`)" class="w-[220px] h-[281px] object-cover">
+              <img :src="getAssetsFile(`m${slide}.png`)" class="w-[220px] h-[281px] object-cover cursor-pointer">
             </div>
           </Slide>
           <template #addons>
@@ -79,6 +79,9 @@ const menuShow = ref(false)
           </template>
         </Carousel>
       </div>
+    </div>
+    <div class="w-screen px-5 gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
+      <img :src="getAssetsFile(`m${pic}.png`)" alt="" v-for="pic in 6" class="w-[100%] h-[100%] object-cover cursor-pointer" @click="show('m', pic, 6)">
     </div>
     <div class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center pic z-10" v-if="showBigPhoto">
       <div class="absolute right-10 top-5 text-xl font-semibold z-20 text-white cursor-pointer" @click="showBigPhoto = false">CLOSE</div>
@@ -97,12 +100,15 @@ const menuShow = ref(false)
     </div>
     <!-- Nails Transformed, Beauty Defined. -->
     <div class="w-screen flex items-center flex-col py-5 px-20" >
-      <span class="text-[#865105] text-[32px] font-bold mb-5" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
-      <div class="max-w-[1200px] flex flex-wrap gap-5 justify-between">
-        <img :src="getAssetsFile(`c${pic}.png`)" alt="" v-for="pic in 10" class="w-[191px] h-[250px] object-cover" @click="show('c', pic, 10)">
+      <span class="text-[#865105] text-[32px] font-bold mb-5 tablet:text-[15px] tablet:text-center" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
+      <div class="w-full gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
+        <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[100%] h-[100%] object-cover cursor-pointer" @click="show('d', pic, 4)">
       </div>
-      <div class="w-[1280px] flex flex-wrap gap-3 justify-between mt-5 px-20">
-       <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[260px] h-[168px] object-cover" @click="show('d', pic, 4)">
+      <div class="max-w-[1200px] w-full flex flex-wrap gap-5 justify-between tablet:grid tablet:grid-cols-2">
+        <img :src="getAssetsFile(`c${pic}.png`)" alt="" v-for="pic in 10" class="w-[191px] h-[250px] tablet:w-[100%] tablet:h-auto object-cover cursor-pointer" @click="show('c', pic, 10)">
+      </div>
+      <div class="w-[1280px] flex gap-3 mt-5 px-20 justify-between tablet:hidden">
+        <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[25%] object-cover cursor-pointer" @click="show('d', pic, 4)">
       </div>
     </div>
     <!-- NAIL IT WITH STYLE! -->
@@ -180,12 +186,13 @@ const menuShow = ref(false)
 </template>
 
 <style lang="scss" scoped>
-:deep(.carousel__prev) {
-  left: -45px;
-}
-
-:deep(.carousel__next) {
-  right: -45px;
+@media screen and (min-width: 1290px) {
+  :deep(.carousel__prev) {
+    left: -45px;
+  }
+  :deep(.carousel__next) {
+    right: -45px;
+  }
 }
 
 .pic {

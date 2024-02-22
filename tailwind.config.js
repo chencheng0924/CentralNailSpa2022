@@ -13,9 +13,9 @@ module.exports = {
         "bgc-white": "#FBF8EB"
       },
       screens: {
-        'tablet': { 'max': '999px' },
+        'tablet': { 'max': '1280px' },
         // 'laptop': { 'min': '950px', 'max': '1130px' },
-        'desktop': { 'min': '1000px' },
+        'desktop': { 'min': '1281px' },
       }
     },
   },
