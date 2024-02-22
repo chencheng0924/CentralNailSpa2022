@@ -44,6 +44,7 @@ const changePicIndex = (type) => {
 import { getAssetsFileIcon } from '@/utils/commonUse.js'
 const optionList = ref(['HOME', 'SERVICES', 'GALLERY', 'CONTACT US'])
 const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAXING'])
+const menuShow = ref(false)
 </script>
 
 <template>
@@ -54,6 +55,10 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
         <div class="optionList">
           <div v-for="(item, index) in optionList" :key="index">{{ item }}</div>
         </div>
+        <div @click="menuShow = true" class="menuIcon"><img src="../assets/icon/menuIcon.svg" alt=""></div>
+        <el-drawer v-model="menuShow" :with-header="false" size="45%">
+          <div style="cursor: pointer;margin: 20px 0;" v-for="(item, index) in optionList" :key="index">{{ item }}</div>
+        </el-drawer>
       </div> 
       <div class="section2">Polish your life <hr>with perfect nails!</div>
       <div class="section3"><img src="../assets/img/1.jpg" alt=""></div>
@@ -86,6 +91,10 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
       <div class="service"><img src="../assets/img/service.png" alt=""></div>
     </div>
     <div class="menu"><img src="../assets/img/menu.png" alt=""></div>
+    <div class="phoneServicePrice">
+      <img src="../assets/img/phoneService.svg" alt="">
+      <img src="../assets/img/phoneService2.svg" alt="">
+    </div>
     <!-- Nails Transformed, Beauty Defined. -->
     <div class="w-screen flex items-center flex-col py-5 px-20" >
       <span class="text-[#865105] text-[32px] font-bold mb-5" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
@@ -97,7 +106,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
       </div>
     </div>
     <!-- NAIL IT WITH STYLE! -->
-    <div class="w-screen flex">
+    <div class="w-screen flex igArea">
       <img src="@/assets/img/pp.png" alt="" class="w-[30%] object-cover">
       <div class="w-[80%] bg-[#E5D6CD] flex flex-col items-center justify-center gap-5">
         <span class="leading-[38.22px] text-[32px] font-bold mb-5" style="font-family: JosefinSlab;letter-spacing: 5px;">NAIL IT WITH STYLE!</span>
@@ -134,6 +143,37 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
           </div>
         </div>
         <div class="footerImg"><img src="../assets/img/footerImg.svg" alt=""></div>
+      </div>
+      <div class="phoneFooterSection">
+        <div class="title">Central Nail Spa 2022</div>
+        <div class="flex gap-5 items-center follow">
+          <img src="@/assets/img/ig.svg" alt="">
+          <div class="flex flex-col items-center justify-between">
+            <span class="followText">Follow & Share</span>
+            <a href="https://www.instagram.com/centralnail745/" target="_blank" class="followLink">@Centralnail745</a>
+          </div>
+        </div>
+        <div class="phone">+1 631-521-6999</div>
+        <div class="address">745 Commack Rd, Brentwood, NY <hr>11717, United States</div>
+        <div class="openHour">
+          <div class="title">OPENING HOURS</div>
+          <div class="time">
+            <div>Monday - Saturday<hr>10:00 - 19:30</div>
+            <div>Sunday<hr>10:00 - 18:00</div>
+          </div>
+        </div>
+        <!-- <div class="footerContent">
+          <div class="section1">
+            <div class="title">Central Nail Spa 2022</div>
+            <div>+1 631-521-6999</div>
+            <div>745 Commack Rd, Brentwood, NY <hr>11717, United States</div>
+          </div>
+          <div class="section2">
+            <div class="time">OPENING HOURS</div>
+            <div>Monday - Saturday<hr>10:00 - 19:30</div>
+            <div>Sunday<hr>10:00 - 18:00</div>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -176,6 +216,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
   .section1{
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     .section1Title{
       font-weight: 700;
@@ -189,6 +230,9 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
         font-weight: 400;
         cursor: pointer;
       }
+    }
+    .menuIcon{
+      display: none;
     }
   }
   .section2{
@@ -248,6 +292,9 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
     width: 100%;
   }
 }
+.phoneServicePrice{
+  display: none;
+}
 .footer{
   display: flex;
   flex-direction: column;
@@ -291,7 +338,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
         flex-direction: column;
         gap: 10px;
         >div{
-          font-family: 'KaiseiDecol';
+          font-family: KaiseiDecol;
           font-size: 14px;
           font-weight: 400;
         }
@@ -316,7 +363,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
       }
       .section3{
         >div{
-          font-family: 'KaiseiDecol';
+          font-family: KaiseiDecol;
           font-size: 14px;
           font-weight: 400;
           cursor: pointer;
@@ -333,6 +380,187 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+    }
+  }
+  .phoneFooterSection{
+    display: none;
+  }
+}
+// @media screen and (min-width: 768px) and (max-width: 1280px) 
+@media screen and (max-width: 768px) {
+  .header{
+    padding: 32px 42px;
+    .section1{
+      .optionList{
+        display: none;
+      }
+      .menuIcon{
+        display: block;
+        cursor: pointer;
+      }
+    }
+    .section2{
+      font-size: 24px;
+    }
+    .section3{
+      img{
+        width: 280px;
+        height: 151px;
+      }
+    }
+    .paintWall{
+      height: 120px;
+    }
+  }
+  .servicePrice, .menu, .igArea{
+    display: none;
+  }
+  .phoneServicePrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 100%;
+    }
+  }
+  .footer{
+    padding: 32px 0;
+    background-color: #E5D6CD;
+    .iconList, .footerSection{
+      display: none;
+    }
+    .phoneFooterSection{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      .title{
+        font-size: 20px;
+        font-weight: 700;
+        font-family:InriaSans;
+      }
+      .follow{
+        display: flex;
+        align-items: flex-end;
+        img{
+          width: 29px;
+          height: 29px;
+        }
+        .followText{
+          font-family: KaushanScript;
+          letter-spacing: 5px;
+        }
+        .followLink{
+          text-decoration: underline;
+          font-family: KaiseiDecol;
+          letter-spacing: 2px;
+        }
+      }
+      .address, .phone{
+        text-align: center;
+        font-family: KaiseiDecol;
+      }
+      .openHour{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .title{
+          font-family: KaiseiDecol;
+        }
+        .time{
+          width: 80%;
+          display: flex;
+          justify-content: space-evenly;
+          div{
+            font-family: KaiseiDecol;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header{
+    .section1{
+      .optionList{
+        display: none;
+      }
+      .menuIcon{
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+  .servicePrice, .menu, .igArea{
+    display: none;
+  }
+  .phoneServicePrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 100%;
+    }
+  }
+  .footer{
+    padding: 32px 0;
+    background-color: #E5D6CD;
+    .iconList, .footerSection{
+      display: none;
+    }
+    .phoneFooterSection{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      .title{
+        font-size: 20px;
+        font-weight: 700;
+        font-family:InriaSans;
+      }
+      .follow{
+        display: flex;
+        align-items: flex-end;
+        img{
+          width: 29px;
+          height: 29px;
+        }
+        .followText{
+          font-family: KaushanScript;
+          letter-spacing: 5px;
+        }
+        .followLink{
+          text-decoration: underline;
+          font-family: KaiseiDecol;
+          letter-spacing: 2px;
+        }
+      }
+      .address, .phone{
+        text-align: center;
+        font-family: KaiseiDecol;
+      }
+      .openHour{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .title{
+          font-family: KaiseiDecol;
+        }
+        .time{
+          width: 80%;
+          display: flex;
+          justify-content: space-evenly;
+          div{
+            font-family: KaiseiDecol;
+          }
+        }
       }
     }
   }
