@@ -105,7 +105,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
           <img src="@/assets/img/ig.svg" alt="" class="w-[58px] h-[58px] mr-5">
           <div class="flex flex-col items-center justify-between">
             <span class="text-[24px]" style="font-family: KaushanScript;letter-spacing: 5px;">Follow & Share</span>
-            <a href="https://www.instagram.com/centralnail745/" target="_blank" class="underline text-[24px]" style="font-family: KaiseiDecol;letter-spacing: 2px;">@Centralnailspa2022</a>
+            <a href="https://www.instagram.com/centralnail745/" target="_blank" class="underline text-[24px]" style="font-family: KaiseiDecol;letter-spacing: 2px;">@Centralnail745</a>
           </div>
         </div>
       </div>
@@ -209,6 +209,7 @@ const iconList = ref(['NAILS', 'WAXING', 'EYELASH', 'FACIAL', 'BACK & FEET RELAX
 .servicePrice{
   display: flex;
   align-items: center;
+  padding: 0 100px;
   .store{
     width: 50%;
     height: 479px;
