@@ -80,8 +80,8 @@ onMounted(() => {
 
 <template>
   <div class="wrapper">
-    <div id="HOME" class="header">
-      <div class="section1">
+    <div id="HOME" class="header" :class="{'isPhone': !isComputer}">
+      <div class="section1" :class="{'phoneFixed': !isComputer}">
         <div class="section1Title">Central Nail Spa 2022</div>
         <div class="optionList">
           <div v-for="(item, index) in optionList" :key="index" @click="scrollTo(item)">{{ item }}</div>
@@ -238,6 +238,9 @@ onMounted(() => {
   align-items: center;
   gap: 35px;
   position: relative;
+  &.isPhone{
+    padding-top: 80px;
+  }
   .paintWall{
     position: absolute;
     bottom: 0;
@@ -251,6 +254,14 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    &.phoneFixed{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 25px 50px;
+      background-color: #E5D6CD;
+      z-index: 100;
+    }
     .section1Title{
       font-weight: 700;
       font-size: 18px;
