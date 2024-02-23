@@ -121,8 +121,10 @@ onMounted(() => {
       </div>
       <div class="menu"><img src="../assets/img/menu.png" alt=""></div>
       <div class="phoneServicePrice">
-        <img src="../assets/img/phoneService.svg" alt="">
-        <img src="../assets/img/phoneService2.svg" alt="">
+        <img src="../assets/img/phoneService1.png" alt="">
+        <img src="../assets/img/phoneService2.png" alt="">
+        <img src="../assets/img/phoneService3.png" alt="">
+        <img src="../assets/img/phoneService4.png" alt="">
       </div>
     </div>
     <!-- Nails Transformed, Beauty Defined. -->
@@ -179,23 +181,24 @@ onMounted(() => {
           <div class="footerImg"><img src="../assets/img/footerImg.svg" alt=""></div>
         </div>
         <div class="phoneFooterSection">
-          <div class="title">Central Nail Spa 2022</div>
-          <div class="flex gap-5 items-center follow">
+          <div class="flex gap-5 items-center follow mb-10">
             <img src="@/assets/img/ig.svg" alt="">
             <div class="flex flex-col items-center justify-between">
               <span class="followText">Follow & Share</span>
               <a href="https://www.instagram.com/centralnail745/" target="_blank" class="followLink">@Centralnail745</a>
             </div>
           </div>
+          <div class="title">Central Nail Spa 2022</div>
           <div class="phone">+1 631-521-6999</div>
-          <div class="address">745 Commack Rd, Brentwood, NY <hr>11717, United States</div>
-          <div class="openHour">
+          <div class="address mb-10">745 Commack Rd, Brentwood, NY <hr>11717, United States</div>
+          <div class="openHour mb-5">
             <div class="title">OPENING HOURS</div>
             <div class="time">
               <div>Monday - Saturday<hr>10:00 - 19:30</div>
               <div>Sunday<hr>10:00 - 18:00</div>
             </div>
           </div>
+          <div class="cursor-pointer my-1" v-for="(item, index) in optionList" :key="index" @click="scrollTo(item)">{{ item }}</div>
         </div>
       </div>
     </div>
@@ -227,7 +230,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 35px;
   position: relative;
   .paintWall{
     position: absolute;
@@ -263,7 +266,7 @@ onMounted(() => {
     font-size: 40px;
     font-weight: 400;
     font-family: Jomolhari;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     text-align: center;
   }
   .section3{
@@ -428,7 +431,7 @@ onMounted(() => {
       }
     }
     .section2{
-      font-size: 24px;
+      font-size: 20px;
     }
     .section3{
       img{
@@ -437,7 +440,7 @@ onMounted(() => {
       }
     }
     .paintWall{
-      height: 120px;
+      height: 80px;
     }
   }
   .servicePrice, .menu, .igArea{
@@ -466,7 +469,7 @@ onMounted(() => {
         align-items: center;
         gap: 15px;
         .title{
-          font-size: 20px;
+          font-size: 15px;
           font-weight: 700;
           font-family:InriaSans;
         }
@@ -495,15 +498,19 @@ onMounted(() => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 100%;
+          gap: 10px;
           .title{
             font-family: KaiseiDecol;
           }
           .time{
-            width: 80%;
+            width: 100%;
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             div{
+              font-size: 14px;
+              width: 100%;
               font-family: KaiseiDecol;
             }
           }
@@ -579,15 +586,19 @@ onMounted(() => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 100%;
+          gap: 10px;
           .title{
             font-family: KaiseiDecol;
           }
           .time{
-            width: 80%;
+            width: 100%;
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             div{
+              font-size: 14px;
+              width: 100%;
               font-family: KaiseiDecol;
             }
           }
