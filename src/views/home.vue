@@ -58,10 +58,15 @@ const scrollTo = (id) => {
 const screenWidth = ref(window.innerWidth);
 const handleResize = () => {
   screenWidth.value = window.innerWidth;
+  if(screenWidth.value <= 1024){
+    isComputer.value = false
+  } else {
+    isComputer.value = true
+  }
 };
 const isComputer = ref(true)
 watch(screenWidth, (newValue, oldValue) => {
-  if(newValue <= 1024){
+  if(newValue <= 1025){
     isComputer.value = false
   } else {
     isComputer.value = true
@@ -69,6 +74,7 @@ watch(screenWidth, (newValue, oldValue) => {
 });
 onMounted(() => {
   window.addEventListener('resize', handleResize);
+  handleResize()
 });
 </script>
 
