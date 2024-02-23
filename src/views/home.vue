@@ -102,7 +102,7 @@ const menuShow = ref(false)
     <div class="w-screen flex items-center flex-col py-5 px-20" >
       <span class="text-[#865105] text-[32px] font-bold mb-5 tablet:text-[15px] tablet:text-center" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
       <div class="w-full gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
-        <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[100%] h-[100%] object-cover cursor-pointer" @click="show('d', pic, 4)">
+        <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[100%] h-auto object-cover cursor-pointer" @click="show('d', pic, 4)">
       </div>
       <div class="max-w-[1200px] w-full flex flex-wrap gap-5 justify-between tablet:grid tablet:grid-cols-2">
         <img :src="getAssetsFile(`c${pic}.png`)" alt="" v-for="pic in 10" class="w-[191px] h-[250px] tablet:w-[100%] tablet:h-auto object-cover cursor-pointer" @click="show('c', pic, 10)">
