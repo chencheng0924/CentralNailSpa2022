@@ -105,7 +105,7 @@ onMounted(() => {
         </Carousel>
       </div>
     </div>
-    <div class="w-screen px-5 gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
+    <div class="w-screen px-5 gap-3 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
       <img :src="getAssetsFile(`m${pic}.png`)" alt="" v-for="pic in 6" class="w-[100%] h-[100%] object-cover cursor-pointer" @click="show('m', pic, 6)">
     </div>
     <div class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center pic z-10" v-if="showBigPhoto">
@@ -126,8 +126,8 @@ onMounted(() => {
       </div>
     </div>
     <!-- Nails Transformed, Beauty Defined. -->
-    <div id="GALLERY" class="w-screen flex items-center flex-col py-5 px-20" >
-      <span class="text-[#865105] text-[32px] font-bold mb-5 tablet:text-[15px] tablet:text-center" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
+    <div id="GALLERY" class="w-screen flex items-center flex-col py-5 px-20 tablet:px-[28px] tablet:py-[41px]" >
+      <span class="text-[#865105] text-[32px] font-bold mb-5 tablet:text-[16px] tablet:text-center" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
       <div class="w-full gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
         <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[100%] h-auto object-cover cursor-pointer" @click="show('d', pic, 4)">
       </div>
