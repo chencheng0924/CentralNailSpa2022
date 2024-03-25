@@ -140,7 +140,6 @@ const closeBigPhoto = () => {
         <img src="../assets/img/phoneService4.png" alt="">
         <img src="../assets/img/phoneService5.png" alt="">
         <img src="../assets/img/phoneService6.png" alt="">
-        <img src="../assets/img/phoneService7.png" alt="">
       </div>
     </div>
     <!-- Nails Transformed, Beauty Defined. -->
