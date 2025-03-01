@@ -87,7 +87,8 @@ const closeBigPhoto = () => {
 
 <template>
   <div class="wrapper">
-    <div id="HOME" class="header" :class="{'isPhone': !isComputer}">
+    The webpage has been removed.
+    <!-- <div id="HOME" class="header" :class="{'isPhone': !isComputer}">
       <div class="section1" :class="{'phoneFixed': !isComputer}">
         <div class="section1Title">Central Nail Spa 2022</div>
         <div class="optionList">
@@ -101,14 +102,13 @@ const closeBigPhoto = () => {
       <div class="section2">Polish your life <hr>with perfect nails!</div>
       <div class="section3"><img src="../assets/img/1.jpg" alt="" class="object-cover"></div>
       <div class="paintWall" />
-    </div>
+    </div> -->
     <!-- 輪播 -->
-    <div class="w-screen py-10 flex flex-col items-center tablet:hidden">
+    <!-- <div class="w-screen py-10 flex flex-col items-center tablet:hidden">
       <div class="max-w-[1200px]">
         <Carousel :snapAlign="'center'" :breakpoints="breakpoints">
           <Slide v-for="slide in 10" :key="slide" @click="show('m', slide, 10)">
             <div class="carousel__item">
-              <!-- <img :src="getAssetsFile(`m${slide}.png`)" class="w-[200px]"> -->
               <img :src="getAssetsFile(`m${slide}.png`)" class="w-[220px] h-[281px] object-cover cursor-pointer">
             </div>
           </Slide>
@@ -121,12 +121,18 @@ const closeBigPhoto = () => {
     <div class="w-screen px-5 gap-3 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
       <img :src="getAssetsFile(`m${pic}.png`)" alt="" v-for="pic in 6" class="w-[100%] h-[100%] object-cover cursor-pointer" @click="show('m', pic, 6)">
     </div>
-    <div class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center pic z-[1000]" v-if="showBigPhoto">
-      <div class="absolute right-10 top-5 text-xl font-semibold z-20 text-white cursor-pointer" @click="closeBigPhoto()">CLOSE</div>
-       <img src="@/assets/img/ca.png" class="rotate-180 w-[50px] absolute top-[50%] left-[10%] translate-y-[-50%] cursor-pointer mobile:left-[2%]" v-if="nowIndex > 1" @click="changePicIndex('back')">
-      <img :src="nowPic" class="w-[70vw] h-[80vh] object-contain">
-      <img src="@/assets/img/ca.png" class="w-[50px] absolute top-[50%] right-[10%] translate-y-[-50%] cursor-pointer mobile:right-[2%]" v-if="nowIndex < pLimit" @click="changePicIndex('go')">
-    </div>
+    <el-dialog
+      v-model="showBigPhoto"
+    >
+      <template>
+        <div class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center pic z-[1000]">
+          <div class="absolute right-10 top-5 text-xl font-semibold z-20 text-white cursor-pointer" @click="closeBigPhoto()">CLOSE</div>
+            <img src="@/assets/img/ca.png" class="rotate-180 w-[50px] absolute top-[50%] left-[10%] translate-y-[-50%] cursor-pointer mobile:left-[2%]" v-if="nowIndex > 1" @click="changePicIndex('back')">
+          <img :src="nowPic" class="w-[70vw] h-[80vh] object-contain">
+          <img src="@/assets/img/ca.png" class="w-[50px] absolute top-[50%] right-[10%] translate-y-[-50%] cursor-pointer mobile:right-[2%]" v-if="nowIndex < pLimit" @click="changePicIndex('go')">
+        </div>
+      </template>
+    </el-dialog>
     <div id="SERVICES" class="flex flex-col gap-[50px]">
       <div class="servicePrice">
         <div class="store"><img src="../assets/img/store.png" alt=""></div>
@@ -142,9 +148,9 @@ const closeBigPhoto = () => {
         <img src="../assets/img/phoneService6.png" alt="">
         <img src="../assets/img/phoneService7.png" alt="">
       </div>
-    </div>
+    </div> -->
     <!-- Nails Transformed, Beauty Defined. -->
-    <div id="GALLERY" class="w-screen flex items-center flex-col py-5 px-20 tablet:px-[28px] tablet:py-[41px]" >
+    <!-- <div id="GALLERY" class="w-screen flex items-center flex-col py-5 px-20 tablet:px-[28px] tablet:py-[41px]" >
       <span class="text-[#865105] text-[32px] font-bold mb-5 tablet:text-[16px] tablet:text-center" style="font-family: 'InriaSans';letter-spacing: 5px;">Nails Transformed, Beauty Defined.</span>
       <div class="w-full gap-3 mt-5 tablet:grid tablet:grid-cols-2 mb-5 desktop:hidden">
         <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[100%] h-auto object-cover cursor-pointer" @click="show('d', pic, 4)">
@@ -155,9 +161,9 @@ const closeBigPhoto = () => {
       <div class="w-[1280px] flex gap-3 mt-5 px-20 justify-between tablet:hidden">
         <img :src="getAssetsFile(`d${pic}.png`)" alt="" v-for="pic in 4" class="w-[25%] object-cover cursor-pointer" @click="show('d', pic, 4)">
       </div>
-    </div>
+    </div> -->
     <!-- NAIL IT WITH STYLE! -->
-    <div v-if="isComputer" id="CONTACT US" class="w-screen flex igArea">
+    <!-- <div v-if="isComputer" id="CONTACT US" class="w-screen flex igArea">
       <img src="@/assets/img/pp.png" alt="" class="w-[30%] object-cover">
       <div class="w-[80%] bg-[#E5D6CD] flex flex-col items-center justify-center gap-5">
         <span class="leading-[38.22px] text-[32px] font-bold mb-5" style="font-family: JosefinSlab;letter-spacing: 5px;">NAIL IT WITH STYLE!</span>
@@ -217,7 +223,7 @@ const closeBigPhoto = () => {
           <div class="cursor-pointer my-1" v-for="(item, index) in optionList" :key="index" @click="scrollTo(item)">{{ item }}</div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
